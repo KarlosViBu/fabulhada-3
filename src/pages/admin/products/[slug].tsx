@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
 import { Box, Button, capitalize, Card, CardActions, CardMedia, Checkbox, Chip, Divider, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, InputAdornment, ListItem, Paper, Radio, RadioGroup, TextField } from '@mui/material';
+import Swal from 'sweetalert2';
 
 import { AdminLayout } from '@/components/layouts'
 import { IProduct } from '@/interfaces';
@@ -43,6 +44,8 @@ interface Props {
 }
 
 const ProductAdminPage: FC<Props> = ({ product }) => {
+
+    let ksave = ' '
 
     // Cloudinary
     const [url, updateUrl] = useState();
@@ -164,10 +167,21 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
 
             // console.log({data});
             if (!form._id) {
+                ksave = "Creado";
                 router.replace(`/admin/products/${form.slug}`);
             } else {
+                ksave = "Actualizado";
                 setIsSaving(false)
             }
+            if (ksave.length > 0)
+                Swal.fire({
+                    // position: 'top-end',
+                    width:'20em',
+                    icon: 'success',
+                    title: ksave,
+                    showConfirmButton: false,
+                    timer: 2500
+                })
 
 
         } catch (error) {

@@ -52,7 +52,7 @@ const LoginPage = () => {
       // router.replace(destination);
       const res = await signIn('credentials', { email, password, redirect: true });
 
-      console.log(res);
+      // console.log(res);
 
    }
 
