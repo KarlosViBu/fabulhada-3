@@ -228,7 +228,7 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
                         <TextField
                             label="Materiales"
                             variant="filled"
-                            // multiline
+                            multiline
                             maxRows={4}
                             fullWidth
                             sx={{ mb: 1 }}
@@ -379,7 +379,7 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
                         <TextField
                             label="Descripción"
                             variant="filled"
-                            // multiline
+                            multiline
                             maxRows={4}
                             fullWidth
                             sx={{ mb: 1 }}
