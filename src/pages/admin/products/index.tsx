@@ -73,6 +73,7 @@ const ProductsPage = () => {
       <AdminLayout
          title={`Productos`} // (${data?.length})`}
          subTitle={'Mantenimiento de productos'}
+         pou={1}
          icon={<Icon icon="carbon:category-new-each" color="#019" width="30" />}
       >
          <Box display='flex' justifyContent='space-between' sx={{ mb: 2 }}>
