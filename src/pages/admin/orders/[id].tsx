@@ -23,6 +23,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
             title={`Orden: ${order._id}`}
             // subTitle={`OrdenId: ${order._id}`}
             subTitle={''}
+            pou={2}
             icon={<Icon icon="fluent-mdl2:activate-orders" color="#154" width="35" />}
         >
             <Grid container spacing={2} className='fadeIn'>

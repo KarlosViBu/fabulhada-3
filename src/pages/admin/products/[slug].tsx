@@ -195,6 +195,7 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
         <AdminLayout
             title={'Producto'}
             subTitle={`Editando: ${product.personage}`}
+            pou={1}
             icon={<Icon icon="carbon:category-new-each" color="#019" width="35" />}
         >
             <form onSubmit={handleSubmit(onSubmit)}>
