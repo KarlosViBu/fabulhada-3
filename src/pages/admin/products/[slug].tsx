@@ -173,7 +173,7 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
                 ksave = "Actualizado";
                 setIsSaving(false)
             }
-            if (ksave.length > 0)
+            if (ksave.length > 0){
                 Swal.fire({
                     // position: 'top-end',
                     width:'20em',
@@ -182,7 +182,8 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
                     showConfirmButton: false,
                     timer: 2500
                 })
-
+            }
+            router.replace(`/admin/products`);
 
         } catch (error) {
             console.log(error);
