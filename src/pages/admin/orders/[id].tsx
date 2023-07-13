@@ -115,44 +115,44 @@ const OrderPage: NextPage<Props> = ({ order }) => {
 // - Only if you need to pre-render a page whose data must be fetched at request time
 
 
-export const getServerSideProps: GetServerSideProps = async ({ req, query }) => {
+// export const getServerSideProps: GetServerSideProps = async ({ req, query }) => {
 
-    const validRoles = ['admin']
-    const session: any = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-    // console.log({session});
+//     const validRoles = ['admin']
+//     const session: any = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+//     // console.log({session});
 
-    if (session && validRoles.includes(session.user.role)) {
-        // console.log(session.user.role);
+//     if (session && validRoles.includes(session.user.role)) {
+//         // console.log(session.user.role);
 
-        const { id = '' } = query;
-        const order = await dbOrders.getOrderById(id.toString());
+//         const { id = '' } = query;
+//         const order = await dbOrders.getOrderById(id.toString());
 
-        if (!order) {
-            return {
-                redirect: {
-                    destination: '/admin/orders',
-                    permanent: false,
-                }
-            }
-        }
+//         if (!order) {
+//             return {
+//                 redirect: {
+//                     destination: '/admin/orders',
+//                     permanent: false,
+//                 }
+//             }
+//         }
 
-        return {
-            props: {
-                order
-            }
-        }
-    }
-    else {
-        return {
-            redirect: {
-                destination: '/',
-                permanent: false
-            }
-        }
-    }
+//         return {
+//             props: {
+//                 order
+//             }
+//         }
+//     }
+//     else {
+//         return {
+//             redirect: {
+//                 destination: '/',
+//                 permanent: false
+//             }
+//         }
+//     }
 
     
-}
+// }
 
 
 export default OrderPage;

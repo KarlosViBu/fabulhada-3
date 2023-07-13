@@ -121,25 +121,25 @@ const DashboardPage = () => {
 // You should use getServerSideProps when:
 // - Only if you need to pre-render a page whose data must be fetched at request time
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+// export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
-    const validRoles = ['admin']
-    const session: any = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-    // console.log({session});
+//     const validRoles = ['admin']
+//     const session: any = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+//     // console.log({session});
 
-    if (session && validRoles.includes(session.user.role)) {
-        // console.log(session.user.role);
-        return { props: {} }
-    }
-    else {
-        return {
-            redirect: {
-                destination: '/',
-                permanent: false
-            }
-        }
-    }
+//     if (session && validRoles.includes(session.user.role)) {
+//         // console.log(session.user.role);
+//         return { props: {} }
+//     }
+//     else {
+//         return {
+//             redirect: {
+//                 destination: '/',
+//                 permanent: false
+//             }
+//         }
+//     }
 
-}
+// }
 
 export default DashboardPage

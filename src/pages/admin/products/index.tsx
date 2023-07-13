@@ -109,25 +109,26 @@ const ProductsPage = () => {
    )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
-   const validRoles = ['admin']
-   const session: any = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-   // console.log({session});
+// export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
-   if (session && validRoles.includes(session.user.role)) {
-      // console.log(session.user.role);
-      return { props: {} }
-   }
-   else {
-      return {
-         redirect: {
-            destination: '/',
-            permanent: false
-         }
-      }
-   }
+//    const validRoles = ['admin']
+//    const session: any = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+//    // console.log({session});
 
-}
+//    if (session && validRoles.includes(session.user.role)) {
+//       // console.log(session.user.role);
+//       return { props: {} }
+//    }
+//    else {
+//       return {
+//          redirect: {
+//             destination: '/',
+//             permanent: false
+//          }
+//       }
+//    }
+
+// }
 
 export default ProductsPage;
