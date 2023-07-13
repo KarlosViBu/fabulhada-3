@@ -475,7 +475,7 @@ const ProductAdminPage: FC<Props> = ({ product }) => {
 
 
                             <Chip
-                                label="Es necesario al 2 imagenes"
+                                label="Son necesarias 3 imagenes"
                                 color='error'
                                 variant='outlined'
                                 sx={{ display: getValues('images').length < 2 ? 'flex' : 'none' }}
