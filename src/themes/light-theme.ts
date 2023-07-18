@@ -6,7 +6,7 @@ export const lightTheme = createTheme({
 
   typography: {
     //  fontFamily: font5
-     fontFamily: font3.style.fontFamily,
+     fontFamily: font2.style.fontFamily,
   },
 
   palette: {
