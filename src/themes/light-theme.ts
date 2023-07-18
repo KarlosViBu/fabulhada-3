@@ -1,9 +1,12 @@
 import { createTheme } from '@mui/material/styles';
 import { red,  } from '@mui/material/colors';
+import { font1, font2, font3, font4, font5 } from '@/components/ui';
 
 export const lightTheme = createTheme({
 
   typography: {
+    //  fontFamily: font5
+     fontFamily: font3.style.fontFamily,
   },
 
   palette: {

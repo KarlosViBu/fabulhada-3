@@ -13,7 +13,6 @@ import { ShopLayout } from '../../components/layouts/ShopLayout';
 import { CartList, OrderSummary } from '../../components/cart';
 import { Icon } from '@iconify/react';
 
-
 import { dbOrders } from '../../database';
 import { IOrder } from '../../interfaces';
 import { fabulhadaApi } from '../../api';

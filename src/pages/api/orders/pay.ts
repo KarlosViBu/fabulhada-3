@@ -4,6 +4,7 @@ import axios from 'axios';
 import { IPaypal } from '@/interfaces';
 import { db } from '@/database';
 import { Order } from '@/models';
+import Cookies from 'js-cookie';
 
 
 
@@ -64,7 +65,6 @@ const payOrder = async(req: NextApiRequest, res: NextApiResponse<Data>) => {
     // Todo: validar sesión del usuario
     // TODO: validar mongoID
 
-
     
     const paypalBearerToken = await getPaypalBearerToken();
     
@@ -105,6 +105,9 @@ const payOrder = async(req: NextApiRequest, res: NextApiResponse<Data>) => {
     dbOrder.isPaid = true;
     await dbOrder.save();
     await db.disconnect();
+
+    Cookies.set("ordenid",transactionId,{expires: 2 });
+    console.log({transactionId});
     
     return res.status(200).json({ message: 'Orden pagada' });
 }
