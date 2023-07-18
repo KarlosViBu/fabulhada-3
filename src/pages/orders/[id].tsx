@@ -17,6 +17,7 @@ import { Icon } from '@iconify/react';
 import { dbOrders } from '../../database';
 import { IOrder } from '../../interfaces';
 import { fabulhadaApi } from '../../api';
+import Cookies from 'js-cookie';
 
 interface Props {
    order: IOrder;
@@ -36,7 +37,7 @@ const OrderPage: NextPage<Props> = ({ order }) => {
          return alert('Falta pago en Paypal');
       }
 
-      setIsPaying(true);
+      // setIsPaying(true);
 
       try {
 
@@ -44,6 +45,9 @@ const OrderPage: NextPage<Props> = ({ order }) => {
             transactionId: kid,
             orderId: order._id
          });
+
+         Cookies.set("idOrden", kid, {expires: 2})
+         console.log(`orderID: ${kid}`);
 
          router.reload();
 
@@ -202,6 +206,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req, query }) => 
          }
       }
    }
+
+   const idUsu = session.user._id
+   Cookies.set("idUsu", idUsu, { expires: 7 })
+   console.log({idUsu});
 
    const order = await dbOrders.getOrderById(id.toString());
 
