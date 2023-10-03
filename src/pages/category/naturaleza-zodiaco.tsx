@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import { Box, Typography } from '@mui/material';
 
 import { ShopLayout } from '@/components/layouts';
 
@@ -7,7 +6,7 @@ import { ProductList } from '@/components/products';
 import { useProducts } from '@/hooks';
 
 import { FullScreenLoading } from '@/components/ui';
-import { SalmodiaNZ } from '@/components/category';
+// import { SalmodiaNZ } from '@/components/category';
 
 
 const NaturalezaZodiacoPage: NextPage = () => {
@@ -19,12 +18,11 @@ const NaturalezaZodiacoPage: NextPage = () => {
    return (
       <ShopLayout title={'Fabul♥Hada - Naturaleza & Zodiaco'} 
       pageDescription={'Los mejores productos de FabulHada para la Naturaleza y Zodiaco'}>
-      <Box display='flex' justifyContent='space-between'  align-items= 'end' >
-        <h1 className='ktitle'>
-          Naturaleza y Zodíaco
-        </h1>
-          <SalmodiaNZ  />
-      </Box>
+      <div className='flex justify-between'>
+        <h1 className="text-slate-100 mb-2 titulo mx-3">
+          Naturaleza y Zodíaco</h1>
+          {/* <SalmodiaNZ  /> */}
+      </div>
          {
             isLoading
                ? <FullScreenLoading />

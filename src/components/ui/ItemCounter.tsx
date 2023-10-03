@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
-import LessIcon from '../iconos/LessIcon';
-import AddIcon from '../iconos/AddIcon';
+import { AddIcon, LessIcon } from '../iconos/Kicons';
+// import LessIcon from '../iconos/LessIcon';
+// import AddIcon from '../iconos/AddIcon';
 
 interface Props {
   currentValue: number;

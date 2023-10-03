@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { ShopLayout } from "../components/layouts";
 import Image from 'next/image';
-import gato from '../../public/gifs/gato.gif'
+import gato from '/public/gifs/gato.gif'
 
 const Custom404 = () => {
   return (

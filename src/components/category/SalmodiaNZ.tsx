@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogProps, DialogTitle, Link } from '@mui/material';
-import { font3, font5 } from '../ui';
+import { arya, kiteOne } from '../ui';
 
 export const SalmodiaNZ = () => {
 
@@ -48,7 +48,7 @@ export const SalmodiaNZ = () => {
             aria-labelledby="scroll-dialog-title"
             aria-describedby="scroll-dialog-description"
          >
-            <DialogTitle className={font3.className} id="scroll-dialog-title">SALMODIA PARA LOS ELEMENTALES DE LA NATURALEZA</DialogTitle>
+            <DialogTitle className={arya.className} id="scroll-dialog-title">SALMODIA PARA LOS ELEMENTALES DE LA NATURALEZA</DialogTitle>
             <DialogContent dividers={scroll === 'paper'}>
                <DialogContentText
                   className='ksalmodia'
@@ -56,7 +56,7 @@ export const SalmodiaNZ = () => {
                   ref={descriptionElementRef}
                   tabIndex={-1}
                >
-                  <div className={font5.className}>
+                  <div className={kiteOne.className}>
                      <p>Espíritus de la naturaleza, escuchad al que os pide:</p>
                      <p></p>
                      <p>Que el aire me inspire</p>

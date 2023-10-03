@@ -2,17 +2,17 @@ import { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import { Box, Button, Chip, Grid, Typography } from '@mui/material';
 import { CartContext } from '@/context';
 
 import { ShopLayout } from '@/components/layouts';
-import { ProductSlideshow, SizeSelector } from '@/components/products';
 
 import { ItemCounter } from '@/components/ui/ItemCounter';
 import { dbProducts } from '@/database';
 import { ICartProduct, IProduct, IKind } from '@/interfaces';
 import { currency } from '@/utils';
-import { Product } from '@/models';
+// import { ProductSlideshow } from '@/components/products';
+import { arya } from '@/components/font';
+import { Kslideshow } from '@/components/products/Kslideshow';
 
 interface Props {
   product: IProduct
@@ -60,100 +60,61 @@ const ProductPage: NextPage<Props> = ({ product }) => {
   }
 
   return (
-    <ShopLayout title={product.personage} pageDescription={product.description}>
+    <ShopLayout title={'Fabul♥Hada - Tienda'} pageDescription={'Encuentra los mejores productos de FabulHada aquí'}>
 
-      <Grid container spacing={3}>
+      <section className="text-gray-900  md:text-xl overflow-hidden">
+        <div className=" flex flex-wrap bg-white bg-opacity-70 p-2 rounded-2xl lg:px-10 lg:mx-14">
 
-        <Grid item xs={12} sm={7}>
-          <ProductSlideshow
-            images={product.images}
-          />
-        </Grid>
+          <div className="md:w-[60%] object-center rounded p-2 w-full lg:h-auto h-48 md:px-10" >
+            <Kslideshow  images={ product.images }  />
+            {/* <ProductSlideshow images={ product.images }/> */}
 
-        <Grid item xs={12} sm={5}>
-          <Box display='flex' flexDirection='column'>
+          </div>
 
-            {/* titulos */}
-            <h2 className='ktitle2'>{product.personage}</h2>
-            <h2 className='ktitle2'>{currency.format(product.price)}</h2>
-            {/* <Typography variant='h1' component='h1'>{product.personage}</Typography>
-            <Typography variant='h1'>
-              {currency.format(product.price)}
-            </Typography> */}
+          <div className="md:w-[40%] w-full md:pr-10 lg:py-6 mb-6 lg:mb-0 lg:px-5">
+              <h1 className={`${arya.className} text-gray-900 text-2xl
+                     md:text-3xl lg:text-4xl  font-extrabold m-2`}>
+                {product.personage}
+              </h1>
+            <div className={`flex justify-between md:mb-4`}>
+              <span className={`${arya.className} text-gray-900 text-2xl md:text-3xl lg:text-4xl  
+                    font-extrabold`}>{currency.format(product.price)}
+              </span>
+              <div className='px-5 text-sky-800'>
+                <h2 className='mx-5'>Cantidad</h2>
+                  <ItemCounter
+                    currentValue={tempCartProduct.quantity}
+                    updatedQuantity={onUpdateQuantity}
+                    maxValue={5}
+                  />
+              </div>
+            </div>
 
-            {/* Cantidad */}
-            <Box sx={{ my: 6 }}>
-              <Typography variant='h2' component='h2'>Cantidad</Typography>
-              <ItemCounter
-                currentValue={tempCartProduct.quantity}
-                updatedQuantity={onUpdateQuantity}
-                // maxValue={ product.inStock > 10 ? 10: product.inStock }
-                maxValue={5}
-              />
-              <SizeSelector
-                kinds={product.kind}
-                selectedSize={tempCartProduct.kind}
-                onSelectedSize={selectedSize}
-              />
-            </Box>
+            <div className="flex mb-4">
+              <a className="flex text-sky-800 border-b-2 border-sky-800 py-2 px-1">
+                Materiales
+              </a>
+            </div>
+            <p className="leading-relaxed mb-4">{product.description}</p>
 
+            <div className='flex gap-10 justify-center text-center'>
+              <div className="flex flex-col">
+                <span className="text-sky-800">Color</span>
+                <span className="text-gray-900">{product.color}</span>
+              </div>
 
-            {/* Agregar al carrito */}
-            {
-              (product.inStock > 0)
-                ? (
-                  <Button
-                    // color="secondary" 
-                    className='circular-btn'
-                    size='large'
-                    onClick={onAddProduct}
-                  >
-                    {
-                      tempCartProduct.kind
-                        ? 'Agregar al carrito'
-                        : 'Seleccione una talla'
-                    }
-                  </Button>
-                )
-                : (
-                  <Chip label="No hay disponibles" color="error" variant='outlined' />
-                )
-            }
+              <div className="flex flex-col mb-5">
+                <span className="text-sky-800">Tamaño</span>
+                <span className="text-gray-900">{product.size}</span>
+              </div>
+            </div>
+            <div className="flex px-10">
 
-            {/* Descripción */}
-            <Box sx={{ mt: 3 }}>
-              <Typography variant='subtitle1'>Materiales</Typography>
-              <Typography variant='body1'>{product.description}</Typography>
-            </Box>
-
-            <Box display='flex' gap={3}>
-              <Box display='flex' flexDirection='column'>
-                <Typography variant='subtitle1'>Tamaño</Typography>
-                <Typography variant='body1'>{product.size} cm</Typography>
-              </Box>
-              <Box display='flex' flexDirection='column'>
-                <Typography variant='subtitle1'>Color</Typography>
-                <Typography variant='body1'>{product.color}</Typography>
-              </Box>
-            </Box>
-
-            {
-              product.observations !== ''
-                ? (
-                  <Box sx={{ mt: 3 }}>
-                    <Typography variant='subtitle1'>Observaciones</Typography>
-                    <Typography variant='body1'>{product.observations}</Typography>
-                  </Box>
-                )
-                : (<></>
-                )
-            }
-
-          </Box>
-        </Grid>
-
-
-      </Grid>
+              <button className="flex-1 text-white bg-sky-600 border-0 py-2 md:py-3 text-xl md:text-xl px-3 md:px-6 focus:outline-none hover:bg-sky-800 rounded-full">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </ShopLayout>
   )

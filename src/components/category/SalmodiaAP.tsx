@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, DialogProps, DialogTitle, Link, Typography } from '@mui/material';
-import { font3, font5 } from '../ui';
+import { arya, kiteOne } from '../ui';
 
 export const SalmodiaAP = () => {
 
@@ -48,7 +48,7 @@ export const SalmodiaAP = () => {
             aria-labelledby="scroll-dialog-title"
             aria-describedby="scroll-dialog-description"
          >
-            <DialogTitle className={font3.className} id="scroll-dialog-title">SALMODIA DE LA ABUNDANCIA Y LA PROSPERIDAD</DialogTitle>
+            <DialogTitle className={arya.className} id="scroll-dialog-title">SALMODIA DE LA ABUNDANCIA Y LA PROSPERIDAD</DialogTitle>
             <DialogContent dividers={scroll === 'paper'}>
                <DialogContentText
                   className='ksalmodia'
@@ -56,7 +56,7 @@ export const SalmodiaAP = () => {
                   ref={descriptionElementRef}
                   tabIndex={-1}
                >
-                  <div className={font5.className}>
+                  <div className={kiteOne.className}>
                      <p>Elfos, duendes y Gnomos, custodios de los tesoros,</p>
                      <p>Traedme los bienes que escondidos tienes,</p>
                      <p>Traedme el oro que tanto añoro,</p>
