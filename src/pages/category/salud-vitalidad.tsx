@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import { Box, Typography } from '@mui/material';
 
 import { ShopLayout } from '@/components/layouts';
 
@@ -7,7 +6,7 @@ import { ProductList } from '@/components/products';
 import { useProducts } from '@/hooks';
 
 import { FullScreenLoading } from '@/components/ui';
-import { SalmodiaSV } from '@/components/category';
+// import { SalmodiaSV } from '@/components/category';
 
 
 const SaludVitalidadPage: NextPage = () => {
@@ -18,12 +17,11 @@ const SaludVitalidadPage: NextPage = () => {
 
    return (
       <ShopLayout title={'Fabul♥Hada - Salud & Vitalidad'} pageDescription={'Los mejores productos de FabulHada para la Salud y Vitalidad'}>
-      <Box display='flex' justifyContent='space-between'  align-items= 'end' >
-        <h1 className='ktitle'>
-          Salud y Vitalidad
-        </h1>
-          <SalmodiaSV  />
-      </Box>
+         <div className='flex justify-between'>
+           <h1 className="text-slate-100 mb-2 titulo mx-3">
+             Salud y Vitalidad </h1>
+             {/* <SalmodiaSV  /> */}
+         </div>
          {
             isLoading
                ? <FullScreenLoading />

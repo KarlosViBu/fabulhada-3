@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogProps, DialogTitle, Link } from '@mui/material';
-import { font3, font5 } from '../ui';
+import { arya, kiteOne } from '../ui';
 
 export const SalmodiaSV = () => {
 
@@ -48,7 +48,7 @@ export const SalmodiaSV = () => {
             aria-labelledby="scroll-dialog-title"
             aria-describedby="scroll-dialog-description"
          >
-            <DialogTitle className={font3.className} id="scroll-dialog-title">SALMODIA DE LA SALUD Y VITALIDAD</DialogTitle>
+            <DialogTitle className={arya.className} id="scroll-dialog-title">SALMODIA DE LA SALUD Y VITALIDAD</DialogTitle>
             <DialogContent dividers={scroll === 'paper'}>
                <DialogContentText
                   className='ksalmodia'
@@ -56,7 +56,7 @@ export const SalmodiaSV = () => {
                   ref={descriptionElementRef}
                   tabIndex={-1}
                >
-                  <div className={font5.className}>
+                  <div className={kiteOne.className}>
                      <p>Elfos y hadas de la salud,</p>
                      <p>Les pido el elixir me den para sanar cada parte de mi ser,</p>
                      <p>Y así mi labor pueda hacer.</p>

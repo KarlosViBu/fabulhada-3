@@ -5,8 +5,6 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 import { AuthProvider, CartProvider, UiProvider } from '@/context'
 
 import { SWRConfig } from 'swr'
-import { lightTheme } from '@/themes'
-import { ThemeProvider } from '@mui/material'
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -22,10 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
                <AuthProvider>
                   <CartProvider>
                      <UiProvider>
-                        {/* <ThemeProvider theme={kTheme}> */}
-                           <ThemeProvider theme={lightTheme}>
                            <Component {...pageProps} />
-                        </ThemeProvider>
                      </UiProvider>
                   </CartProvider>
                </AuthProvider>

@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import { Box, Typography } from '@mui/material';
 
 import { ShopLayout } from '@/components/layouts';
 
@@ -7,7 +6,7 @@ import { ProductList } from '@/components/products';
 import { useProducts } from '@/hooks';
 
 import { FullScreenLoading } from '@/components/ui';
-import { SalmodiaAA } from '@/components/category';
+// import { SalmodiaAA } from '@/components/category';
 
 
 const AmorArmoniaPage: NextPage = () => {
@@ -18,12 +17,10 @@ const AmorArmoniaPage: NextPage = () => {
 
   return (
     <ShopLayout title={'Fabul♥Hada - Amor y Armonía'} pageDescription={'Los mejores productos de FabulHada para el Amor y Armonía'}>
-      <Box display='flex' justifyContent='space-between' align-items='end' >
-        <h1 className='ktitle'>
-          Amor y Armonía
-        </h1>
-        <SalmodiaAA />
-      </Box>
+      <div className='flex justify-between'>
+        <h1 className="text-slate-100 mb-2 titulo mx-3">Amor y Armonía</h1>
+        {/* <SalmodiaAA /> */}
+      </div>
       {
         isLoading
           ? <FullScreenLoading />

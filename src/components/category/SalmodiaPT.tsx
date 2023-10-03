@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogProps, DialogTitle, Link } from '@mui/material';
-import { font3, font5 } from '../ui';
+import { arya, kiteOne } from '../ui';
 
 export const SalmodiaPT = () => {
 
@@ -48,7 +48,7 @@ export const SalmodiaPT = () => {
             aria-labelledby="scroll-dialog-title"
             aria-describedby="scroll-dialog-description"
          >
-            <DialogTitle className={font3.className} id="scroll-dialog-title">SALMODIA PARA LA PROTECCION Y EL HOGAR (TALISMANES Y TOTEM)</DialogTitle>
+            <DialogTitle className={arya.className} id="scroll-dialog-title">SALMODIA PARA LA PROTECCION Y EL HOGAR (TALISMANES Y TOTEM)</DialogTitle>
             <DialogContent dividers={scroll === 'paper'}>
                <DialogContentText
                   className='ksalmodia'
@@ -56,7 +56,7 @@ export const SalmodiaPT = () => {
                   ref={descriptionElementRef}
                   tabIndex={-1}
                >
-                  <ol className={font5.className}>
+                  <ol className={kiteOne.className}>
                      <li>
                         <p>&nbsp;</p>
                         <p>Ángeles y seres custodios y protectores de nuestra vida y nuestro hogar</p>

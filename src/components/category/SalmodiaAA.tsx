@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogProps, DialogTitle, Link } from '@mui/material';
-import { font3, font5 } from '../ui';
+import { arya, kiteOne } from '../font';
+// import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogProps, DialogTitle, Link } from '@mui/material';
+// import { arya, kiteOne } from '../ui';
 
 export const SalmodiaAA = () => {
 
@@ -48,7 +49,7 @@ export const SalmodiaAA = () => {
             aria-labelledby="scroll-dialog-title"
             aria-describedby="scroll-dialog-description"
          >
-            <DialogTitle className={font3.className} id="scroll-dialog-title">SALMODIA DEL AMOR</DialogTitle>
+            <DialogTitle className={arya.className} id="scroll-dialog-title">SALMODIA DEL AMOR</DialogTitle>
             <DialogContent dividers={scroll === 'paper'}>
                <DialogContentText
                   className='ksalmodia'
@@ -56,7 +57,7 @@ export const SalmodiaAA = () => {
                   ref={descriptionElementRef}
                   tabIndex={-1}
                >
-                  <div className={font5.className}>
+                  <div className={kiteOne.className}>
                      <p>Os pido hada del amor, un ser que sea afín a mi corazón,</p>
                      <p>Eros y cupido flechen nuestro corazón.</p>
                      <p>Que los ángeles del amor protejan mi relación,</p>
